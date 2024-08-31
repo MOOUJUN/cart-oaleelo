@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucesso</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco para contraste */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            overflow: hidden; /* Evita que o scroll apareça */
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        .logo a {
+            display: block;
+        }
+
+        .message {
+            text-align: center;
+            opacity: 0; /* Começa invisível para animação */
+            transform: translateY(20px); /* Começa deslocado para baixo */
+            animation: fadeInUp 2s ease-out forwards; /* Animação mais lenta */
+        }
+
+        .message img {
+            width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: 200px; /* Tornar a imagem redonda */
+            border-radius: 50%; /* Imagem redonda */
+            margin-bottom: 20px;
+        }
+
+        .message p {
+            font-size: 24px; /* Tamanho do texto */
+            color: #28a745; /* Cor verde */
+            margin: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .share-buttons {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .share-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .share-buttons a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        .share-buttons .whatsapp {
+            background-color: #25D366;
+        }
+
+        .share-buttons .facebook {
+            background-color: #4267B2;
+        }
+
+        .share-buttons .instagram {
+            background-color: #C13584;
+        }
+
+        .share-buttons img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            text-align: center;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo no canto superior esquerdo -->
+    <a href="index.html">
+        <img src="imgs/logooficial.png" alt="Logo do Site" class="logo">
+    </a>
+
+    <div class="message">
+        <img src="imgs/verificado.png" alt="Ícone de Confirmação">
+        <p>Sucesso! Informações recebidas com sucesso. O prazo para resposta é de até 3 dias.</p>
+    </div>
+
+    <!-- Botões de compartilhamento -->
+    <div class="share-buttons">
+        <a href="https://wa.me/?text=Sucesso!%20Informações%20recebidas%20com%20sucesso.%20Prazo%20para%20resposta%20é%20de%20até%203%20dias." class="whatsapp" target="_blank" title="Compartilhar no WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=URL_DO_SEU_SITE" class="facebook" target="_blank" title="Compartilhar no Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com" class="instagram" target="_blank" title="Compartilhar no Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&copy; 2024 Aleelo. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>

